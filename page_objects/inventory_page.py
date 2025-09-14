@@ -1,4 +1,4 @@
-# page_objects/inventory_page.py
+
 from selenium.webdriver.common.by import By
 
 class InventoryPage:
