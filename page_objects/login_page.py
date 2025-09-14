@@ -1,9 +1,9 @@
-# page_objects/login_page.py
+
 from selenium.webdriver.common.by import By
 
 
 class LoginPage:
-    # This is the constructor of the class. It's called when you create an object.
+
     def __init__(self, driver):
         self.driver = driver
         # Locators for the elements on the login page
@@ -12,7 +12,6 @@ class LoginPage:
         self.login_button = (By.ID, "login-button")
         self.error_message = (By.CSS_SELECTOR, "h3[data-test='error']")
 
-    # Action methods to interact with the elements
     def enter_username(self, username):
         self.driver.find_element(*self.username_input).send_keys(username)
 
