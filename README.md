@@ -57,6 +57,8 @@ saucedemo_automation/
 ├── conftest.py                # Pytest fixtures and configurations
 ├── config.ini                 # Configuration file for test data
 ├── requirements.txt           # Project dependencies
+├── Test Plan.md              # High-level testing strategy
+├── Test Cases.md             # Detailed manual test cases
 └── README.md                  # You are here!
 ```
 
