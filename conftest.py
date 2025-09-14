@@ -1,4 +1,4 @@
-# conftest.py
+
 import pytest
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options as ChromeOptions
@@ -18,7 +18,7 @@ def driver(request):
     browser_name = request.config.getoption("browser").lower()
 
     if browser_name == "chrome":
-        # Add options to run Chrome in headless mode
+
         chrome_options = ChromeOptions()
         chrome_options.add_argument("--headless")
         chrome_options.add_argument("--no-sandbox")  # A must-have for running as root in Docker/CI
@@ -26,7 +26,7 @@ def driver(request):
         chrome_options.add_argument("--window-size=1920,1080")  # Ensures a consistent window size
         driver = webdriver.Chrome(options=chrome_options)
     elif browser_name == "firefox":
-        # Add options for headless Firefox
+
         firefox_options = FirefoxOptions()
         firefox_options.add_argument("--headless")
         driver = webdriver.Firefox(options=firefox_options)
