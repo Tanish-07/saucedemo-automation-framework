@@ -1,4 +1,4 @@
-# requirements.txt
+
 selenium
 pytest
 allure-pytest
