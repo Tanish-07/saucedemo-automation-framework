@@ -15,10 +15,10 @@ The entire project was managed using **Agile/Scrum methodologies in Jira**, wher
 ### Automated Scenarios
 * **User Authentication:** Validates successful login with standard user credentials and verifies correct error handling for failed login attempts.
 * **Shopping Cart Management:** Covers the end-to-end flow of adding a specific item ("Sauce Labs Backpack") to the cart and verifying its presence.
-* **Data-Driven Testing:** Credentials and other test data are managed externally in a `config.ini` file, not hardcoded in the test scripts.
 
 ### Framework Features
 * **Page Object Model (POM):** The framework is built on the Page Object Model design pattern, ensuring a clean separation between test logic and UI element locators for high maintainability.
+* **Externalized Test Data:** All test data, such as URLs and user credentials, is managed in a `config.ini` file, eliminating hardcoded values from test scripts.
 * **Cross-Browser Testing:** Tests are configured to run on multiple browsers (Chrome and Firefox) using a single command-line argument.
 * **Interactive Test Reports:** Integrated with **Allure Report** to generate detailed, easy-to-read HTML reports with test steps, statuses, and execution times.
 * **Continuous Integration/Continuous Deployment (CI/CD):** The project includes a **GitHub Actions** workflow that automatically triggers the entire test suite on every push and pull request to the `main` branch.
@@ -28,7 +28,7 @@ The entire project was managed using **Agile/Scrum methodologies in Jira**, wher
 ## 🛠️ Tech Stack & Tools
 
 * **Programming Language:** Python 3.11+
-* **Test Automation Library:** Selenium
+* **Test Automation Libraries:** Selenium, configparser
 * **Test Runner:** Pytest
 * **Reporting:** Allure Report
 * **CI/CD:** GitHub Actions
@@ -53,7 +53,7 @@ saucedemo_automation/
 │   ├── test_login.py
 │   └── test_shopping_cart.py
 ├── utils/                     # Helper utilities
-│   └── config_reader.py
+│   └── config_reader.py       # Reads the configuration file
 ├── conftest.py                # Pytest fixtures and configurations
 ├── config.ini                 # Configuration file for test data
 ├── requirements.txt           # Project dependencies
@@ -88,6 +88,7 @@ Follow these instructions to set up the project and run the tests on your local 
     ```bash
     pip install -r requirements.txt
     ```
+4.  **(Optional) Configure Test Data:** You can modify user credentials and the target URL in the `config.ini` file without changing any code.
 
 ---
 
@@ -119,6 +120,7 @@ To run the tests on a specific browser, use the `--browser` flag:
 ## 📊 Test Reporting with Allure
 
 This project uses Allure to generate detailed and interactive test reports.
+
 
 
 ### Generating the Report
