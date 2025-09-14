@@ -1,4 +1,4 @@
-# utils/config_reader.py
+
 import configparser
 
 def read_config(section, key):
